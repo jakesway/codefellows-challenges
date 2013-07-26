@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>The To-Do list</title>
+<script>
+  
+	function createtodo()
+	{
+		var button=document.createElement("BUTTON");
+		var sticky=document.createElement("IMG"); sticky.src = "http://img2.annthegran.com/StockDesign/Large/Hirsch/BR00013.jpg"
+		var text =document.createTextNode(document.getElementById("todo_text").value);
+		button.style.backgroundImage = sticky;
+		button.style.height = 300;
+		button.style.width = 300;
+		button.appendChild(text);
+		button.addEventListener("click", function(){document.body.removeChild(button);});
+		document.body.appendChild(button);
+	};
+
+
+</script>
+</head>
+<body>
+
+<center>
+
+<img src="http://midwestcityok.org/Websites/MWC/Images/Departments/Police/checklist.jpg" alt="checklist image"> 
+
+<textarea id="todo_text" rows = "20" cols="20">
+Enter your next task here.
+</textarea>
+<br>
+
+<button type="button" onclick="createtodo()">Pin your task</button>
+
+</form>
+
+<br>
+<br>
+
+</center>
+
+</BODY>
+
+</HTML> 
+
+
+
