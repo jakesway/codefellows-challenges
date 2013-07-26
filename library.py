@@ -3,7 +3,7 @@
 #Make the book object have "enshelf" and "unshelf" methods that control what shelf the book is sitting on. 
 #The library should have a method to report all books it contains.
 
-class book(object):  
+class book(object):	
 
 	def __init__(self, title, author):
 		(book, self).__init__()
@@ -59,7 +59,10 @@ class library(object):
 		for x in range(0,len(self.shelves)):
 			temp_list.append(self.shelves[x].get_books())
 
-		print(temp_list)
+		return temp_list
+
+	def report_shelves(self):
+		return len(self.shelves)
 
 #---------------------------------------------------------------------------------------
 #----------------------SEATTLE PUBLIC LIBARARY -----------------------------------------
@@ -78,8 +81,11 @@ b1.enshelf(0)
 b2.enshelf(1)
 b3.enshelf(2)
 
-print(SPL.report_all_books())
+print ("The library has these books in stock: ")
+print (SPL.report_all_books())
 
 b1.unshelf()
 b2.unshelf()
 b3.unshelf()
+
+print ("The library has " + str(SPL.report_shelves()) + " shelves.")
